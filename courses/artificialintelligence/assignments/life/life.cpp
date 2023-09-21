@@ -28,40 +28,12 @@ int main(){
        //rows
        for (int k = 0; k < L; k++) {
          counter = 0;
-         // Right
+
          /*
-         if(i==C)
-         {
-           if (grid[0][k] == '#') counter++;
-         }
-         else
-             if (grid[i + 1][k] == '#') counter++;
-
-         //left
-         if(i == 0)
-         {
-           if (grid[C][k] == '#') counter++;
-         }
-         else
-             if (grid[i - 1][k] == '#') counter++;
-
-         //up
-         if(k==L)
-         {
-           if (grid[i][0] == '#') counter++;
-         }
-         else
-             if (grid[i][k+1] == '#') counter++;
-
-         //down
-         if(k == 0)
-         {
-           if (grid[i][L] == '#') counter++;
-         }
-         else
-             if (grid[i][k-1] == '#') counter++;
-
-*/
+          *    U
+          * L  *  R
+          *    D
+          */
          for(int c1 = -1; c1 <= 1; c1++) {
            for (int c2 = -1; c2 <= 1; c2++) {
              if (c1 == 0 && c2 == 0) continue;
@@ -71,6 +43,7 @@ int main(){
              if (grid[temp1][temp2] == '#') counter++;
            }
          }
+         //Living/Dying logic
          if (grid[i][k] == '#')
          {
            if(counter < 2 || counter >3)
